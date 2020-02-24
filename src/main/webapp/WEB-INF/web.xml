@@ -1,0 +1,28 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>JndiServlet</servlet-name>
+        <servlet-class>com.astroviking.JndiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JndiServlet</servlet-name>
+        <url-pattern>/jndiTest</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>jndiTest</welcome-file>
+    </welcome-file-list>
+
+    <!-- Needed for servlets to access the resource -->
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/TestDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+</web-app>
